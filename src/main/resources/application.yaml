@@ -1,0 +1,23 @@
+#可以添加el表达式
+person:
+  name: suntao${random.uuid}
+  age: 23
+  maps: {k1: v1,k2: v2}
+  list:
+    - dog
+    - cat
+    - mouse
+
+#springboot的多环境配置：可以用于激活哪一个配置文件，在默认的配置文件中配置
+#active的值是要激活的配置文件的application-之后的字符
+spring:
+  profiles:
+    active: test
+---
+#---用来分隔文件，yaml支持一个文件多个块 用spring.profiles来命名
+spring:
+  profiles: test
+server:
+  port: 8088
+#debug: true 来看那些类生效了和那些类不生效
+debug: true
